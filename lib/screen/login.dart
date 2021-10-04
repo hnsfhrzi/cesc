@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topLeft,
+              begin: Alignment.topCenter,
               end: Alignment.bottomRight,
               colors: [Color(0xFF0072B8), Color(0xFF7ABCDE)]),
         ),
