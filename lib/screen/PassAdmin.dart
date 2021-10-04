@@ -38,6 +38,7 @@ class PassAdmin extends StatelessWidget {
             padding:
                 const EdgeInsets.symmetric(horizontal: 50.0, vertical: 40.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Password Lama :',
@@ -47,7 +48,7 @@ class PassAdmin extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                IsiForm(hintText: 'Password Lama'),
+                IsiForm(),
                 SizedBox(height: 20),
                 Text(
                   'Password Baru :',
@@ -57,7 +58,7 @@ class PassAdmin extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                IsiForm(hintText: 'Password Baru'),
+                IsiForm(),
                 SizedBox(height: 20),
                 Text(
                   'Konfirmasi Password :',
@@ -67,9 +68,14 @@ class PassAdmin extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                IsiForm(hintText: 'Konfirmasi Password'),
+                IsiForm(),
                 SizedBox(height: 40),
-                BuatButton(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BuatButton(),
+                  ],
+                )
               ],
             ),
           ),
@@ -80,8 +86,7 @@ class PassAdmin extends StatelessWidget {
 }
 
 class IsiForm extends StatefulWidget {
-  const IsiForm({required this.hintText});
-  final String hintText;
+  const IsiForm();
 
   @override
   _IsiFormState createState() => _IsiFormState();
@@ -93,6 +98,7 @@ class _IsiFormState extends State<IsiForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 35,
       child: TextFormField(
         onSaved: (newValue) => controller = newValue,
         onChanged: (value) {
@@ -102,7 +108,6 @@ class _IsiFormState extends State<IsiForm> {
         },
         decoration: InputDecoration(
           border: OutlineInputBorder(),
-          hintText: widget.hintText,
         ),
       ),
     );

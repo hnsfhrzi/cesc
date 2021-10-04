@@ -1,3 +1,4 @@
+import 'package:cesc/screen/login.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatelessWidget {
@@ -15,7 +16,10 @@ class SignUp extends StatelessWidget {
           ),
         ),
         leading: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => LoginPage()));
+          },
           child: Icon(
             Icons.arrow_back_ios,
             size: 29,
@@ -39,6 +43,7 @@ class SignUp extends StatelessWidget {
                 const EdgeInsets.symmetric(horizontal: 50.0, vertical: 40.0),
             child: SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Nama Lengkap',
@@ -48,7 +53,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(hintText: 'Nama Lengkap'),
+                  IsiForm(),
                   SizedBox(height: 20),
                   Text(
                     'NRP',
@@ -58,7 +63,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(hintText: 'NRP'),
+                  IsiForm(),
                   SizedBox(height: 20),
                   Text(
                     'Email',
@@ -68,7 +73,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(hintText: 'Email'),
+                  IsiForm(),
                   SizedBox(height: 20),
                   Text(
                     'No.Telp',
@@ -78,7 +83,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(hintText: 'No. Telp'),
+                  IsiForm(),
                   SizedBox(height: 20),
                   Text(
                     'Alamat Asal',
@@ -88,7 +93,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(hintText: 'Alamat Asal'),
+                  IsiForm(),
                   SizedBox(height: 20),
                   Text(
                     'Alamat Surabaya',
@@ -98,7 +103,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(hintText: 'Alamat Surabaya'),
+                  IsiForm(),
                   SizedBox(height: 20),
                   Text(
                     'Password',
@@ -108,7 +113,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(hintText: 'Password'),
+                  IsiForm(),
                   SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -129,8 +134,7 @@ class SignUp extends StatelessWidget {
 }
 
 class IsiForm extends StatefulWidget {
-  const IsiForm({required this.hintText});
-  final String hintText;
+  const IsiForm();
 
   @override
   _IsiFormState createState() => _IsiFormState();
@@ -142,6 +146,7 @@ class _IsiFormState extends State<IsiForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 35,
       child: TextFormField(
         onSaved: (newValue) => controller = newValue,
         onChanged: (value) {
@@ -151,7 +156,6 @@ class _IsiFormState extends State<IsiForm> {
         },
         decoration: InputDecoration(
           border: OutlineInputBorder(),
-          hintText: widget.hintText,
         ),
       ),
     );
@@ -164,7 +168,10 @@ class CancelButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LoginPage()));
+      },
       child: Container(
         height: 50,
         width: 140,
