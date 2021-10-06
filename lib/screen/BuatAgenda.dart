@@ -1,3 +1,4 @@
+import 'package:cesc/screen/HalAgendaAdmin.dart';
 import 'package:flutter/material.dart';
 
 class BuatAgenda extends StatelessWidget {
@@ -14,17 +15,22 @@ class BuatAgenda extends StatelessWidget {
             fontSize: 22,
           ),
         ),
+        //Icon Back Button that direct to HalAgendaAdmin
         leading: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => HalAgendaAdmin()));
+          },
           child: Icon(
             Icons.arrow_back_ios,
             size: 29,
           ),
         ),
+        //Giving Gradient Color for AppBar
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                  begin: Alignment.topCenter,
+                  begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [Color(0xFF0072B8), Color(0xFF7ABCDE)])),
         ),
@@ -33,7 +39,7 @@ class BuatAgenda extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 40.0),
+          padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 40.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -130,6 +136,14 @@ class CancelButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HalAgendaAdmin(),
+          ),
+        );
+      },
       child: Container(
         height: 50,
         width: 140,
@@ -158,7 +172,14 @@ class BuatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HalAgendaAdmin(),
+          ),
+        );
+      },
       child: Container(
         height: 50,
         width: 140,

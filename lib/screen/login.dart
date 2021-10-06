@@ -45,7 +45,10 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => SignUp()));
+                      },
                       child: Text(
                         'Buat Akun',
                         style: TextStyle(
@@ -101,10 +104,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => SignUp()));
-      },
+      onTap: () {},
       child: Container(
         height: 50,
         width: 150,

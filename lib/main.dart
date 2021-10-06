@@ -1,5 +1,8 @@
-import 'package:cesc/screen/BuafInfo.dart';
+import 'package:cesc/screen/BuatInfo.dart';
 import 'package:cesc/screen/BuatAgenda.dart';
+import 'package:cesc/screen/HalAgendaAdmin.dart';
+import 'package:cesc/screen/HalAgendaUser.dart';
+import 'package:cesc/screen/HalInfoUser.dart';
 import 'package:cesc/screen/PassAdmin.dart';
 import 'package:cesc/screen/PassUser.dart';
 import 'package:cesc/screen/login.dart';
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: BuatInfo(),
+      home: HalInfoUser(),
     );
   }
 }
