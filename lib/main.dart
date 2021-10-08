@@ -1,5 +1,7 @@
 import 'package:cesc/screen/BuatInfo.dart';
 import 'package:cesc/screen/BuatAgenda.dart';
+import 'package:cesc/screen/DetailAgenda.dart';
+import 'package:cesc/screen/DetailInfo.dart';
 import 'package:cesc/screen/HalAgendaAdmin.dart';
 import 'package:cesc/screen/HalAgendaUser.dart';
 import 'package:cesc/screen/HalInfoUser.dart';

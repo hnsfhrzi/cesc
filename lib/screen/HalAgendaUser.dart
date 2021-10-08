@@ -1,3 +1,4 @@
+import 'package:cesc/screen/DetailAgenda.dart';
 import 'package:flutter/material.dart';
 
 class HalAgendaUser extends StatelessWidget {
@@ -63,7 +64,12 @@ class HalAgendaUser extends StatelessWidget {
                 child: ListView(
                   children: [
                     InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailAgenda()));
+                        },
                         child: Container(
                           height: 180,
                           width: 10,
