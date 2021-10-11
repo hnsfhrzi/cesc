@@ -1,5 +1,7 @@
-import 'package:cesc/screen/HalAgendaAdmin.dart';
+import 'package:cesc/screen/HalAgendaUser.dart';
 import 'package:flutter/material.dart';
+
+//AMAN
 
 class BuatAgenda extends StatelessWidget {
   const BuatAgenda({Key? key}) : super(key: key);
@@ -19,7 +21,7 @@ class BuatAgenda extends StatelessWidget {
         leading: GestureDetector(
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HalAgendaAdmin()));
+                MaterialPageRoute(builder: (context) => HalAgendaUser()));
           },
           child: Icon(
             Icons.arrow_back_ios,
@@ -140,7 +142,7 @@ class CancelButton extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HalAgendaAdmin(),
+            builder: (context) => HalAgendaUser(),
           ),
         );
       },
@@ -176,7 +178,7 @@ class BuatButton extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HalAgendaAdmin(),
+            builder: (context) => HalAgendaUser(),
           ),
         );
       },

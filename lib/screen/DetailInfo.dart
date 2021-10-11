@@ -1,5 +1,7 @@
-import 'package:cesc/screen/HalInfoUser.dart';
+import 'package:cesc/screen/HalInfo.dart';
 import 'package:flutter/material.dart';
+
+//AMAN
 
 class DetailInfo extends StatelessWidget {
   const DetailInfo({Key? key}) : super(key: key);
@@ -10,8 +12,8 @@ class DetailInfo extends StatelessWidget {
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HalInfoUser()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HalInfo()));
           },
           child: Icon(
             Icons.arrow_back_ios,
@@ -32,6 +34,18 @@ class DetailInfo extends StatelessWidget {
                   end: Alignment.bottomRight,
                   colors: [Color(0xFF0072B8), Color(0xFF7ABCDE)])),
         ),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 15),
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.more_horiz,
+                size: 36,
+              ),
+            ),
+          )
+        ],
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,

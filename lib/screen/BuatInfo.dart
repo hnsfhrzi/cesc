@@ -1,4 +1,7 @@
+import 'package:cesc/screen/HalInfo.dart';
 import 'package:flutter/material.dart';
+
+//AMAN
 
 class BuatInfo extends StatelessWidget {
   const BuatInfo({Key? key}) : super(key: key);
@@ -15,7 +18,10 @@ class BuatInfo extends StatelessWidget {
           ),
         ),
         leading: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HalInfo()));
+          },
           child: Icon(
             Icons.arrow_back_ios,
             size: 29,
@@ -130,6 +136,10 @@ class CancelButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HalInfo()));
+      },
       child: Container(
         height: 50,
         width: 140,
@@ -158,7 +168,10 @@ class BuatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HalInfo()));
+      },
       child: Container(
         height: 50,
         width: 140,

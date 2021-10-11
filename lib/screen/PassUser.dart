@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//Belum Kehubung sm halaman profil
+
 class PassUser extends StatelessWidget {
   const PassUser({Key? key}) : super(key: key);
 

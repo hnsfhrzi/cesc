@@ -32,6 +32,18 @@ class DetailAgenda extends StatelessWidget {
                   end: Alignment.bottomRight,
                   colors: [Color(0xFF0072B8), Color(0xFF7ABCDE)])),
         ),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 15),
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.more_horiz,
+                size: 36,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,

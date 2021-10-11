@@ -1,4 +1,6 @@
+import 'package:cesc/screen/BuatAgenda.dart';
 import 'package:cesc/screen/DetailAgenda.dart';
+import 'package:cesc/screen/Kalender.dart';
 import 'package:flutter/material.dart';
 
 class HalAgendaUser extends StatelessWidget {
@@ -9,7 +11,10 @@ class HalAgendaUser extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => TableBasic()));
+          },
           child: Icon(
             Icons.arrow_back_ios,
             size: 29,
@@ -22,6 +27,26 @@ class HalAgendaUser extends StatelessWidget {
                   end: Alignment.bottomRight,
                   colors: [Color(0xFF0072B8), Color(0xFF7ABCDE)])),
         ),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 15),
+            //Icon Add Button that direct to BuatAgenda
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BuatAgenda(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.add,
+                size: 36,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
