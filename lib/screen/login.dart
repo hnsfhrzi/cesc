@@ -1,3 +1,4 @@
+import 'package:cesc/screen/Kalender.dart';
 import 'package:cesc/screen/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -106,7 +107,10 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => TableBasic()));
+      },
       child: Container(
         height: 50,
         width: 150,

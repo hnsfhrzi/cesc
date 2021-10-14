@@ -1,4 +1,4 @@
-import 'package:cesc/screen/Profil.dart';
+import 'package:cesc/screen/HalamanProfil.dart';
 import 'package:flutter/material.dart';
 
 class PassAdmin extends StatelessWidget {

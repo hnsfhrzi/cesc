@@ -3,11 +3,10 @@ import 'package:cesc/screen/BuatAgenda.dart';
 import 'package:cesc/screen/DetailAgenda.dart';
 import 'package:cesc/screen/DetailInfo.dart';
 import 'package:cesc/screen/HalAgendaUser.dart';
-import 'package:cesc/screen/HalInfo.dart';
+import 'package:cesc/screen/HalamanInfo.dart';
+import 'package:cesc/screen/HalamanProfil.dart';
 import 'package:cesc/screen/Kalender.dart';
 import 'package:cesc/screen/PassAdmin.dart';
-import 'package:cesc/screen/PassUser.dart';
-import 'package:cesc/screen/Profil.dart';
 import 'package:cesc/screen/login.dart';
 import 'package:cesc/screen/signup.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HalInfo(),
+      home: InfoPage(),
     );
   }
 }

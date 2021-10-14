@@ -2,8 +2,21 @@ import 'package:cesc/screen/BuatInfo.dart';
 import 'package:cesc/screen/DetailInfo.dart';
 import 'package:flutter/material.dart';
 
-class HalInfo extends StatelessWidget {
-  const HalInfo({Key? key}) : super(key: key);
+class InfoPage extends StatefulWidget {
+  const InfoPage({Key? key}) : super(key: key);
+
+  @override
+  _InfoPageState createState() => _InfoPageState();
+}
+
+class _InfoPageState extends State<InfoPage> {
+  int _selectedIndex = 1;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -171,6 +184,9 @@ class HalInfo extends StatelessWidget {
             label: 'Profil',
           ),
         ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        selectedItemColor: Color(0xFF0072B8),
       ),
     );
   }

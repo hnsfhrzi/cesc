@@ -12,9 +12,16 @@ class TableBasic extends StatefulWidget {
 }
 
 class _TableBasicState extends State<TableBasic> {
+  int _selectedIndex = 0;
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,6 +99,9 @@ class _TableBasicState extends State<TableBasic> {
             label: 'Profil',
           ),
         ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        selectedItemColor: Color(0xFF0072B8),
       ),
     );
   }

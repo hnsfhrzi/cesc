@@ -1,8 +1,21 @@
 import 'package:cesc/screen/PassAdmin.dart';
 import 'package:flutter/material.dart';
 
-class ProfilPage extends StatelessWidget {
+class ProfilPage extends StatefulWidget {
   const ProfilPage({Key? key}) : super(key: key);
+
+  @override
+  _ProfilPageState createState() => _ProfilPageState();
+}
+
+class _ProfilPageState extends State<ProfilPage> {
+  int _selectedIndex = 2;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -184,6 +197,9 @@ class ProfilPage extends StatelessWidget {
             label: 'Profil',
           ),
         ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        selectedItemColor: Color(0xFF0072B8),
       ),
     );
   }
