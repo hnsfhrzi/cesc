@@ -1,4 +1,5 @@
 import 'package:cesc/screen/Kalender.dart';
+import 'package:cesc/screen/dashboard.dart';
 import 'package:cesc/screen/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -109,7 +110,7 @@ class LoginButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TableBasic()));
+            context, MaterialPageRoute(builder: (context) => DashBoard()));
       },
       child: Container(
         height: 50,

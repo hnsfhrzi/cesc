@@ -10,8 +10,7 @@ class DetailAgenda extends StatelessWidget {
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HalAgendaUser()));
+            Navigator.pop(context);
           },
           child: Icon(
             Icons.arrow_back_ios,

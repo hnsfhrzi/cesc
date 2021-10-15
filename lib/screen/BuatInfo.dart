@@ -1,4 +1,5 @@
 import 'package:cesc/screen/HalamanInfo.dart';
+import 'package:cesc/screen/dashboard.dart';
 import 'package:flutter/material.dart';
 
 //AMAN
@@ -20,7 +21,7 @@ class BuatInfo extends StatelessWidget {
         leading: GestureDetector(
           onTap: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => InfoPage()));
+                context, MaterialPageRoute(builder: (context) => DashBoard()));
           },
           child: Icon(
             Icons.arrow_back_ios,
@@ -137,8 +138,7 @@ class CancelButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => InfoPage()));
+        Navigator.pop(context);
       },
       child: Container(
         height: 50,

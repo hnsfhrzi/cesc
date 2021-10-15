@@ -1,4 +1,5 @@
 import 'package:cesc/screen/HalamanProfil.dart';
+import 'package:cesc/screen/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class PassAdmin extends StatelessWidget {
@@ -17,8 +18,7 @@ class PassAdmin extends StatelessWidget {
         ),
         leading: GestureDetector(
           onTap: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => ProfilPage()));
+            Navigator.pop(context);
           },
           child: Icon(
             Icons.arrow_back_ios,
@@ -126,7 +126,7 @@ class BuatButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ProfilPage()));
+            context, MaterialPageRoute(builder: (context) => DashBoard()));
       },
       child: Container(
         height: 50,

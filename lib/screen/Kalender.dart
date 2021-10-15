@@ -1,4 +1,5 @@
 import 'package:cesc/screen/HalAgendaUser.dart';
+import 'package:cesc/screen/Notification.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -12,16 +13,9 @@ class TableBasic extends StatefulWidget {
 }
 
 class _TableBasicState extends State<TableBasic> {
-  int _selectedIndex = 0;
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +42,10 @@ class _TableBasicState extends State<TableBasic> {
           Padding(
             padding: EdgeInsets.only(right: 15),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Notif()));
+              },
               child: Icon(
                 Icons.notifications,
                 size: 30,
@@ -83,25 +80,6 @@ class _TableBasicState extends State<TableBasic> {
         onPageChanged: (focusedDay) {
           _focusedDay = focusedDay;
         },
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Calendar',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: 'Info',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Color(0xFF0072B8),
       ),
     );
   }

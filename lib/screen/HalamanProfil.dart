@@ -9,14 +9,6 @@ class ProfilPage extends StatefulWidget {
 }
 
 class _ProfilPageState extends State<ProfilPage> {
-  int _selectedIndex = 2;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,173 +25,158 @@ class _ProfilPageState extends State<ProfilPage> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: Column(
-          children: [
-            Stack(
-              alignment: AlignmentDirectional.topCenter,
-              children: [
-                Container(
-                  height: 260,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.blue[100],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
+                alignment: AlignmentDirectional.topCenter,
+                children: [
+                  Container(
+                    height: 260,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.blue[100],
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 20.0),
+                        child: Image.asset(
+                          'assets/images/logo/ce.png',
+                          width: 180,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'DEPARTEMEN TEKNIK KOMPUTER',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: Row(
+                    children: [
+                      Text(
+                        'No. Telepon',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        '    : ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        '(031) 5922936',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      )
+                    ],
                   ),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 20.0),
-                      child: Image.asset(
-                        'assets/images/logo/ce.png',
-                        width: 180,
+              ),
+              SizedBox(height: 10),
+              Divider(
+                color: Colors.grey[850],
+                thickness: 0.8,
+              ),
+              SizedBox(height: 10),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Email',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'DEPARTEMEN TEKNIK KOMPUTER',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w600,
+                      Text(
+                        '                : ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Row(
-                  children: [
-                    Text(
-                      'No. Telepon',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    Text(
-                      '    : ',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    Text(
-                      '(031) 5922936',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    )
-                  ],
+                      Text(
+                        'telematics@its.ac.id',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 10),
-            Divider(
-              color: Colors.grey[850],
-              thickness: 0.8,
-            ),
-            SizedBox(height: 10),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Row(
-                  children: [
-                    Text(
-                      'Email',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
+              SizedBox(height: 10),
+              Divider(
+                color: Colors.grey[850],
+                thickness: 0.8,
+              ),
+              SizedBox(height: 10),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Alamat Surabaya',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20,
+                        ),
                       ),
-                    ),
-                    Text(
-                      '                : ',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
+                      Text(
+                        ' : ',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20,
+                        ),
                       ),
-                    ),
-                    Text(
-                      'telematics@its.ac.id',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    )
-                  ],
+                      Flexible(
+                        child: Text(
+                          'Jl. Raya ITS, Keputih, Kec. Sukolilo',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 10),
-            Divider(
-              color: Colors.grey[850],
-              thickness: 0.8,
-            ),
-            SizedBox(height: 10),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Row(
-                  children: [
-                    Text(
-                      'Alamat Surabaya',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    Text(
-                      ' : ',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
-                      ),
-                    ),
-                    Text(
-                      'Jl. Raya ITS, Keputih, Kec. Sukolilo',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ],
-                ),
+              SizedBox(height: 10),
+              Divider(
+                color: Colors.grey[850],
+                thickness: 0.8,
               ),
-            ),
-            SizedBox(height: 10),
-            Divider(
-              color: Colors.grey[850],
-              thickness: 0.8,
-            ),
-            SizedBox(height: 20),
-            UbahPassword(),
-          ],
+              SizedBox(height: 20),
+              UbahPassword(),
+            ],
+          ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Calendar',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
-            label: 'Info',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Color(0xFF0072B8),
       ),
     );
   }

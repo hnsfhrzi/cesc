@@ -12,8 +12,7 @@ class DetailInfo extends StatelessWidget {
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => InfoPage()));
+            Navigator.pop(context);
           },
           child: Icon(
             Icons.arrow_back_ios,

@@ -20,8 +20,7 @@ class BuatAgenda extends StatelessWidget {
         //Icon Back Button that direct to HalAgendaAdmin
         leading: GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HalAgendaUser()));
+            Navigator.pop(context);
           },
           child: Icon(
             Icons.arrow_back_ios,
@@ -139,12 +138,7 @@ class CancelButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HalAgendaUser(),
-          ),
-        );
+        Navigator.pop(context);
       },
       child: Container(
         height: 50,

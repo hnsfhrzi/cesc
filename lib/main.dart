@@ -6,7 +6,9 @@ import 'package:cesc/screen/HalAgendaUser.dart';
 import 'package:cesc/screen/HalamanInfo.dart';
 import 'package:cesc/screen/HalamanProfil.dart';
 import 'package:cesc/screen/Kalender.dart';
+import 'package:cesc/screen/Notification.dart';
 import 'package:cesc/screen/PassAdmin.dart';
+import 'package:cesc/screen/dashboard.dart';
 import 'package:cesc/screen/login.dart';
 import 'package:cesc/screen/signup.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: InfoPage(),
+      home: LoginPage(),
     );
   }
 }
