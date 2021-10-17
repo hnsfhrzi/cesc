@@ -3,8 +3,6 @@ import 'package:cesc/screen/dashboard.dart';
 import 'package:cesc/screen/signup.dart';
 import 'package:flutter/material.dart';
 
-//kurang halaman kalender
-
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 

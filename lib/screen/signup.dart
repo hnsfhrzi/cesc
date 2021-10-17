@@ -1,10 +1,81 @@
 import 'package:cesc/screen/login.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-//AMAN
-
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
+
+  @override
+  _SignUpState createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+  String? userName,
+      userNrp,
+      userEmail,
+      userNoTelp,
+      userReAddress,
+      userSuAddress,
+      userPass;
+
+  getName(name) {
+    this.userName = name;
+  }
+
+  getNRP(nrp) {
+    this.userNrp = nrp;
+  }
+
+  getEmail(email) {
+    this.userEmail = email;
+  }
+
+  getNomorTelp(telepon) {
+    this.userNoTelp = telepon;
+  }
+
+  getRealAddress(rAddress) {
+    this.userReAddress = rAddress;
+  }
+
+  getSuraAddress(sAddress) {
+    this.userSuAddress = sAddress;
+  }
+
+  getPassword(password) {
+    this.userPass = password;
+  }
+
+  createData() {
+    print('created');
+
+    /*CollectionReference Info = FirebaseFirestore.instance.collection("Users");
+
+    Info.add({
+      "Nama": userName,
+      "NRP": userNrp,
+      "Email": userEmail,
+      "NoTelp": userNoTelp,
+      "Alamat_Asal": userReAddress,
+      "Alamat_Surabaya": userSuAddress,
+      "Password": userPass,
+    });*/
+
+    DocumentReference User =
+        FirebaseFirestore.instance.collection("Users").doc(userName);
+
+    Map<String, dynamic> users = {
+      "Nama": userName,
+      "NRP": userNrp,
+      "Email": userEmail,
+      "NoTelp": userNoTelp,
+      "Alamat_Asal": userReAddress,
+      "Alamat_Surabaya": userSuAddress,
+      "Password": userPass,
+    };
+
+    User.set(users).whenComplete(() => null);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +125,17 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(),
+                  Container(
+                    height: 35,
+                    child: TextFormField(
+                      onChanged: (String name) {
+                        getName(name);
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Text(
                     'NRP',
@@ -64,7 +145,17 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(),
+                  Container(
+                    height: 35,
+                    child: TextFormField(
+                      onChanged: (String nrp) {
+                        getNRP(nrp);
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Text(
                     'Email',
@@ -74,7 +165,17 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(),
+                  Container(
+                    height: 35,
+                    child: TextFormField(
+                      onChanged: (String email) {
+                        getEmail(email);
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Text(
                     'No.Telp',
@@ -84,7 +185,17 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(),
+                  Container(
+                    height: 35,
+                    child: TextFormField(
+                      onChanged: (String telepon) {
+                        getNomorTelp(telepon);
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Text(
                     'Alamat Asal',
@@ -94,7 +205,17 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(),
+                  Container(
+                    height: 35,
+                    child: TextFormField(
+                      onChanged: (String rAddress) {
+                        getRealAddress(rAddress);
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Text(
                     'Alamat Surabaya',
@@ -104,7 +225,17 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(),
+                  Container(
+                    height: 35,
+                    child: TextFormField(
+                      onChanged: (String sAddress) {
+                        getSuraAddress(sAddress);
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Text(
                     'Password',
@@ -114,14 +245,47 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
-                  IsiForm(),
+                  Container(
+                    height: 35,
+                    child: TextFormField(
+                      onChanged: (String password) {
+                        getPassword(password);
+                      },
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CancelButton(),
                       SizedBox(width: 20),
-                      BuatButton(),
+                      ElevatedButton(
+                        onPressed: () {
+                          createData();
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 119,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.blue[400],
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Buat',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 22,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ],
@@ -134,7 +298,7 @@ class SignUp extends StatelessWidget {
   }
 }
 
-class IsiForm extends StatefulWidget {
+/*class IsiForm extends StatefulWidget {
   const IsiForm();
 
   @override
@@ -161,7 +325,7 @@ class _IsiFormState extends State<IsiForm> {
       ),
     );
   }
-}
+}*/
 
 class CancelButton extends StatelessWidget {
   const CancelButton({Key? key}) : super(key: key);
@@ -194,7 +358,7 @@ class CancelButton extends StatelessWidget {
   }
 }
 
-class BuatButton extends StatelessWidget {
+/*class BuatButton extends StatelessWidget {
   const BuatButton({Key? key}) : super(key: key);
 
   @override
@@ -224,4 +388,4 @@ class BuatButton extends StatelessWidget {
       ),
     );
   }
-}
+}*/

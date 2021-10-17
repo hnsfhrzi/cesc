@@ -17,6 +17,13 @@ class Notif extends StatelessWidget {
             size: 29,
           ),
         ),
+        title: Text(
+          'Notification',
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 22,
+          ),
+        ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
