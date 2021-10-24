@@ -192,8 +192,9 @@ class _BuatAgendaState extends State<BuatAgenda> {
                 ),
                 SizedBox(height: 10),
                 Container(
-                  height: 35,
+                  height: 160,
                   child: TextFormField(
+                    maxLines: 200,
                     onChanged: (String descript) {
                       getagendaDescription(descript);
                     },

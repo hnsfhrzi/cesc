@@ -113,8 +113,10 @@ class _HalAgendaUserState extends State<HalAgendaUser> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              DetailAgenda()));
+                                          builder: (context) => DetailAgenda(
+                                                namaAgenda: documentSnapshot
+                                                    .reference.id,
+                                              )));
                                 },
                                 child: Container(
                                   height: 180,

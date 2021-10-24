@@ -1,4 +1,5 @@
 import 'package:cesc/screen/DetailAgenda.dart';
+import 'package:cesc/screen/login.dart';
 import 'package:flutter/material.dart';
 
 class Notif extends StatelessWidget {
@@ -39,7 +40,7 @@ class Notif extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailAgenda()));
+                      MaterialPageRoute(builder: (context) => LoginPage()));
                 },
                 child: Container(
                   height: 180,
