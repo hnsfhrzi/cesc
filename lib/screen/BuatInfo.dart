@@ -158,6 +158,29 @@ class _BuatInfoState extends State<BuatInfo> {
                     ),
                   ),
                 ),
+                SizedBox(height: 10),
+                Text(
+                  'Pick Date :',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(height: 10),
+                GestureDetector(
+                  onTap: () {
+                    showDatePicker(
+                      context: context,
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime(2021, 8, 1),
+                      lastDate: DateTime(2032, 12, 25),
+                    );
+                  },
+                  child: Icon(
+                    Icons.calendar_today,
+                    size: 29,
+                  ),
+                ),
                 SizedBox(height: 20),
                 Text(
                   'Kontak yang Bisa Dihubungi :',
@@ -188,8 +211,9 @@ class _BuatInfoState extends State<BuatInfo> {
                 ),
                 SizedBox(height: 10),
                 Container(
-                  height: 35,
+                  height: 160,
                   child: TextFormField(
+                    maxLines: 200,
                     onChanged: (String descrip) {
                       getinfoDescription(descrip);
                     },
@@ -210,7 +234,7 @@ class _BuatInfoState extends State<BuatInfo> {
                       },
                       child: Container(
                         height: 50,
-                        width: 119,
+                        width: 113,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           color: Colors.blue[400],
@@ -273,17 +297,17 @@ class CancelButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
+    return ElevatedButton(
+      onPressed: () {
         Navigator.pop(context);
       },
       child: Container(
         height: 50,
-        width: 140,
+        width: 113,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.blue[400],
-          borderRadius: BorderRadius.circular(12),
+          //borderRadius: BorderRadius.circular(12),
         ),
         child: Center(
           child: Text(
@@ -291,6 +315,7 @@ class CancelButton extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 22,
+              color: Colors.black,
             ),
           ),
         ),

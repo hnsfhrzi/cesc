@@ -109,184 +109,187 @@ class _DetailAgendaState extends State<DetailAgenda> {
                   return Scaffold();
                 } else {
                   return Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              (snapshot.data as dynamic)["Nama_Acara"],
-                              style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                (snapshot.data as dynamic)["Nama_Acara"],
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(width: 5),
+                              Icon(
+                                Icons.notifications_none,
+                                size: 28,
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Center(
+                            child: Container(
+                              height: 200,
+                              width: 350,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1,
+                                ),
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/background/hima.jpg'),
+                                ),
                               ),
                             ),
-                            SizedBox(width: 5),
-                            Icon(
-                              Icons.notifications_none,
-                              size: 28,
-                            )
-                          ],
-                        ),
-                        SizedBox(height: 10),
-                        Center(
-                          child: Container(
-                            height: 200,
-                            width: 350,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.black,
-                                width: 1,
+                          ),
+                          SizedBox(height: 10),
+                          Divider(
+                            color: Colors.grey[850],
+                            thickness: 0.8,
+                          ),
+                          SizedBox(height: 10),
+                          Container(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 30),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Penyelenggara Acara',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  Text(
+                                    '  :  ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  Text(
+                                    (snapshot.data
+                                        as dynamic)["Penyelenggara_Acara"],
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ],
                               ),
-                              image: DecorationImage(
-                                image: AssetImage(
-                                    'assets/images/background/hima.jpg'),
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Divider(
+                            color: Colors.grey[850],
+                            thickness: 0.8,
+                          ),
+                          SizedBox(height: 10),
+                          Container(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 30),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Waktu Diadakan',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  Text(
+                                    '           :  ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  Text(
+                                    (snapshot.data
+                                        as dynamic)["Waktu_Diadakan"],
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Divider(
-                          color: Colors.grey[850],
-                          thickness: 0.8,
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 30),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Penyelenggara Acara',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18,
+                          SizedBox(height: 10),
+                          Divider(
+                            color: Colors.grey[850],
+                            thickness: 0.8,
+                          ),
+                          SizedBox(height: 10),
+                          Container(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 30.0),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Lokasi',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  '  :  ',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18,
+                                  Text(
+                                    '                            :  ',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  (snapshot.data
-                                      as dynamic)["Penyelenggara_Acara"],
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 18,
+                                  Text(
+                                    (snapshot.data as dynamic)["Lokasi"],
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Divider(
-                          color: Colors.grey[850],
-                          thickness: 0.8,
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 30),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Waktu Diadakan',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                Text(
-                                  '           :  ',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                Text(
-                                  (snapshot.data as dynamic)["Waktu_Diadakan"],
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                              ],
-                            ),
+                          SizedBox(height: 10),
+                          Divider(
+                            color: Colors.grey[850],
+                            thickness: 0.8,
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Divider(
-                          color: Colors.grey[850],
-                          thickness: 0.8,
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 30.0),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Lokasi',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
+                          SizedBox(height: 10),
+                          Container(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 30),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Deskripsi  :  ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  '                            :  ',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Text(
-                                  (snapshot.data as dynamic)["Lokasi"],
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                              ],
+                                  SizedBox(height: 10),
+                                  Text(
+                                    (snapshot.data as dynamic)["Deskripsi"],
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18,
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Divider(
-                          color: Colors.grey[850],
-                          thickness: 0.8,
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 30),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Deskripsi  :  ',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                SizedBox(height: 10),
-                                Text(
-                                  (snapshot.data as dynamic)["Deskripsi"],
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 18,
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   );
                 }

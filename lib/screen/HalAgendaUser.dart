@@ -1,6 +1,7 @@
 import 'package:cesc/screen/BuatAgenda.dart';
 import 'package:cesc/screen/DetailAgenda.dart';
 import 'package:cesc/screen/Kalender.dart';
+import 'package:cesc/screen/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -18,7 +19,8 @@ class _HalAgendaUserState extends State<HalAgendaUser> {
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () {
-            Navigator.pop(context);
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => DashBoard()));
           },
           child: Icon(
             Icons.arrow_back_ios,

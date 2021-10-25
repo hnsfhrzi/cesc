@@ -269,7 +269,7 @@ class _SignUpState extends State<SignUp> {
                         },
                         child: Container(
                           height: 50,
-                          width: 119,
+                          width: 113,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: Colors.blue[400],
@@ -332,17 +332,17 @@ class CancelButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
+    return ElevatedButton(
+      onPressed: () {
         Navigator.pop(context);
       },
       child: Container(
         height: 50,
-        width: 140,
+        width: 113,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.blue[400],
-          borderRadius: BorderRadius.circular(12),
+          //borderRadius: BorderRadius.circular(12),
         ),
         child: Center(
           child: Text(
@@ -350,6 +350,7 @@ class CancelButton extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 22,
+              color: Colors.black,
             ),
           ),
         ),

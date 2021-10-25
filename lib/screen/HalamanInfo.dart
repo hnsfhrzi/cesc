@@ -1,6 +1,5 @@
 import 'package:cesc/screen/BuatInfo.dart';
 import 'package:cesc/screen/DetailInfo.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -119,7 +118,10 @@ class _InfoPageState extends State<InfoPage> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => DetailInfo()));
+                                          builder: (context) => DetailInfo(
+                                                namaInfo: documentSnapshot
+                                                    .reference.id,
+                                              )));
                                 },
                                 child: Container(
                                   height: 180,

@@ -129,6 +129,7 @@ class LoginButton extends StatelessWidget {
                   fontSize: 22,
                 ),
               ),
+              SizedBox(width: 10),
               Icon(
                 Icons.arrow_forward_ios,
                 size: 23,
