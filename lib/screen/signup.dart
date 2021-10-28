@@ -1,6 +1,8 @@
 import 'package:cesc/screen/login.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -10,6 +12,9 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   String? userName,
       userNrp,
       userEmail,
@@ -168,6 +173,7 @@ class _SignUpState extends State<SignUp> {
                   Container(
                     height: 35,
                     child: TextFormField(
+                      controller: emailController,
                       onChanged: (String email) {
                         getEmail(email);
                       },
@@ -248,6 +254,8 @@ class _SignUpState extends State<SignUp> {
                   Container(
                     height: 35,
                     child: TextFormField(
+                      controller: passwordController,
+                      obscureText: false,
                       onChanged: (String password) {
                         getPassword(password);
                       },
@@ -263,7 +271,13 @@ class _SignUpState extends State<SignUp> {
                       CancelButton(),
                       SizedBox(width: 20),
                       ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
+                          await FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                            email: emailController.text,
+                            password: passwordController.text,
+                          );
+                          setState(() {});
                           createData();
                           Navigator.pop(context);
                         },

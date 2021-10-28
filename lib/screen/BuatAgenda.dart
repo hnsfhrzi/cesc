@@ -1,6 +1,8 @@
+import 'package:path/path.dart';
 import 'package:cesc/screen/HalAgendaUser.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class BuatAgenda extends StatefulWidget {
   const BuatAgenda({Key? key}) : super(key: key);
@@ -184,6 +186,30 @@ class _BuatAgendaState extends State<BuatAgenda> {
                 ),
                 SizedBox(height: 20),
                 Text(
+                  'Upload Foto :',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                SizedBox(height: 10),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black54, width: 2.5),
+                    ),
+                    child: Icon(
+                      Icons.add,
+                      size: 80,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Text(
                   'Deskripsi :',
                   style: TextStyle(
                     fontSize: 18,
@@ -331,6 +357,7 @@ class CancelButton extends StatelessWidget {
     );
   }
 }
+
 
 /*class BuatButton extends StatelessWidget {
   const BuatButton({Key? key}) : super(key: key);
